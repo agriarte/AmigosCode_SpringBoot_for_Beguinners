@@ -124,3 +124,31 @@ docker run --name adminer -d -p 8089:8080 adminer
 1. Acceder desde el navegador: `localhost:8089`
 2. En la ruta del servidor usar: `host.docker.internal:5332`
 3. Más intuitivo y simple para tareas sencillas de edición de registros o tablas
+
+## Implementación de AI Spring
+
+El proyecto incluye una breve introducción a AI Spring. Mientras que en el curso original se utiliza ChatGPT que es de pago, en este ejemplo se implementa la AI gratuita de Groq.
+
+### Ventajas de usar Groq
+
+- Acceso gratuito a modelos de lenguaje avanzados
+- Alta velocidad de respuesta
+- Fácil integración con aplicaciones Spring Boot
+- APIs compatibles con el ecosistema de Spring
+
+### Configuración básica
+
+```java
+@Configuration
+public class GroqConfig {
+    
+    @Bean
+    public GroqClient groqClient() {
+        return GroqClient.builder()
+            .apiKey(groqApiKey)
+            .build();
+    }
+}
+```
+
+Esta implementación alternativa permite a los desarrolladores experimentar con inteligencia artificial en sus aplicaciones Spring Boot sin costos adicionales.
